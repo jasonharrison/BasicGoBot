@@ -1,6 +1,6 @@
 ## BasicGoBot
 
-A collection of simple IRC bots written in [The Go Programming Language](https://golang.org/).
+A collection of simple IRC bots written in [the Go programming language](https://golang.org/).
 
 `basic/` contains a simple IRC bot.
 
