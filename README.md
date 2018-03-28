@@ -1,5 +1,7 @@
 ## BasicGoBot
 
+[![Build Status](https://travis-ci.org/jasonharrison/BasicGoBot.svg?branch=master)](https://travis-ci.org/jasonharrison/BasicGoBot)
+
 A collection of simple IRC bots written in [the Go programming language](https://golang.org/).
 
 `basic/` contains a simple IRC bot.
