@@ -1,21 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"net"
 	"bufio"
+	"fmt"
 	"io"
 	"log"
+	"net"
 	"strings"
 )
 
 const (
 	nickname string = "testbot"
-	channel string = "#botwar"
+	channel  string = "#botwar"
 )
 
 func sendLine(conn net.Conn, s string) {
-	fmt.Println("Send: "+s)
+	fmt.Println("Send: " + s)
 	fmt.Fprintf(conn, s+"\n")
 }
 
@@ -32,7 +32,7 @@ func loop(conn net.Conn) {
 			log.Fatal(err)
 		}
 		fmt.Print("Recv: ", in)
-		in=strings.TrimSpace(in)
+		in = strings.TrimSpace(in)
 		var ls []string = strings.Split(in, " ")
 		if ls[0] == "PING" {
 			sendLine(conn, "PONG "+ls[1])
@@ -43,7 +43,7 @@ func loop(conn net.Conn) {
 			msg := strings.Join(ls[3:], " ")[1:]
 			fmt.Println(msg)
 			if msg == "hello" {
-				sendLine(conn, "PRIVMSG "+ channel + " :Hello!")
+				sendLine(conn, "PRIVMSG "+channel+" :Hello!")
 			}
 		}
 	}
